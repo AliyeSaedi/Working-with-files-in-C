@@ -11,8 +11,13 @@ int main(){
 		exit(1);
 	}
 	
-	fscanf(fptr,"%s",&mytxt);
-	printf("note in file is: %s",mytxt);
+	int myscan;
+	while(myscan != EOF){
+		if (feof(fptr)){
+			break;
+		}
+		myscan = fscanf(fptr,"%s",&mytxt);
+		printf("note in file is: %s \n",mytxt);
+	}
 	fclose(fptr);
-	
 }
